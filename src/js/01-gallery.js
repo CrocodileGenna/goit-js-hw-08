@@ -1,8 +1,9 @@
-// Add imports above this line
-import { galleryItems } from './gallery-items';
+import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 import SimpleLightbox from "simplelightbox";
-import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm";
+// Додатковий імпорт стилів
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 
 console.log(galleryItems);
 
@@ -12,7 +13,7 @@ const creatItem = (galleryItems) => {
   return galleryItems
     .map(({ preview, original, description }) => {
       return `
-            
+
                 <a class="gallery__link" href="${original}">
                 <img
                     class="gallery__image"
@@ -22,7 +23,7 @@ const creatItem = (galleryItems) => {
                 />
                 </a>`;
     })
-    .join(" ");
+    .join("");
 };
 
 imgConteiner.insertAdjacentHTML("beforeend", creatItem(galleryItems));
